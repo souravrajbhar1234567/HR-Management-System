@@ -34,7 +34,14 @@ const Login = () => {
       if (err.response?.data?.message) {
         setError(err.response.data.message);
       } else if (err.request) {
-        setError('Cannot connect to the backend server. Please make sure the backend is running on port 5001.');
+        const isLocal =
+          window.location.hostname === 'localhost' ||
+          window.location.hostname === '127.0.0.1';
+        setError(
+          isLocal
+            ? 'Cannot connect to local backend server. Please make sure your backend is running on port 5001.'
+            : 'Cannot connect to the live backend server. Please verify your backend web service is deployed on Render and VITE_API_BASE_URL is set in Render Environment Variables.'
+        );
       } else {
         setError(err.message || 'Login failed. Please check your credentials.');
       }

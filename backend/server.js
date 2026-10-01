@@ -39,8 +39,10 @@ app.use(
 
       // In local dev, allow any localhost/127.0.0.1 port (e.g. 5173, 5174, 5175...)
       const isLocalhost = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+      // In production, allow Render deployed frontends (e.g. peoplehub-frontend.onrender.com)
+      const isRender = /^https?:\/\/.*\.onrender\.com$/.test(origin);
 
-      if (allowedOrigins.includes(origin) || isLocalhost) {
+      if (allowedOrigins.includes(origin) || isLocalhost || isRender) {
         return callback(null, true);
       }
       return callback(new Error("Not allowed by CORS"));
