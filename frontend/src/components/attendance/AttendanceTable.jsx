@@ -5,8 +5,8 @@ const AttendanceTable = ({ logs = [], showEmployeeName = true }) => {
   return (
     <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-xs">
       <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs">
-          <thead className="border-b border-slate-200 bg-slate-50/70 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+        <table className="w-full min-w-[620px] text-left text-xs">
+          <thead className="border-b border-slate-200 bg-slate-50/70 text-[11px] font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap">
             <tr>
               <th className="px-6 py-3.5">Date</th>
               {showEmployeeName && <th className="px-6 py-3.5">Employee</th>}
@@ -16,7 +16,7 @@ const AttendanceTable = ({ logs = [], showEmployeeName = true }) => {
               <th className="px-6 py-3.5 text-right">Status</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100 text-slate-700">
+          <tbody className="divide-y divide-slate-100 text-slate-700 whitespace-nowrap">
             {logs.map((log) => (
               <tr key={log._id} className="hover:bg-slate-50/60 transition">
                 <td className="px-6 py-3.5 font-medium text-slate-900">{formatDate(log.date)}</td>

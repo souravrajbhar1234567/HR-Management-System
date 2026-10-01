@@ -19,13 +19,13 @@ const data = [
 
 const AttendanceChart = () => {
   return (
-    <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-xs">
-      <div className="flex items-center justify-between mb-4">
+    <div className="rounded-2xl border border-slate-200/80 bg-white p-4 sm:p-5 shadow-xs">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
         <div>
           <h4 className="text-sm font-bold text-slate-800">Weekly Attendance Overview</h4>
           <p className="text-xs text-slate-500">Employee presence trends across the current week</p>
         </div>
-        <div className="flex items-center gap-3 text-xs">
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs">
           <div className="flex items-center gap-1.5 text-slate-600">
             <span className="h-2.5 w-2.5 rounded-full bg-indigo-600" />
             <span>Present</span>

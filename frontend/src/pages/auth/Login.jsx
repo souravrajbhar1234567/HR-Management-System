@@ -56,7 +56,7 @@ const Login = () => {
       <div className="absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-indigo-600/20 blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -right-20 h-96 w-96 rounded-full bg-violet-600/20 blur-3xl pointer-events-none" />
 
-      <div className="w-full max-w-md relative z-10 rounded-3xl bg-slate-900 border border-slate-800 p-8 shadow-2xl text-slate-100">
+      <div className="w-full max-w-md relative z-10 rounded-2xl sm:rounded-3xl bg-slate-900 border border-slate-800 p-6 sm:p-8 shadow-2xl text-slate-100">
         {/* Brand */}
         <div className="mb-6 text-center">
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 font-extrabold text-white text-lg shadow-lg shadow-indigo-500/30">

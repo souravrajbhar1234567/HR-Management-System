@@ -13,13 +13,13 @@ const AttendanceCalendar = ({ logs = [] }) => {
   };
 
   return (
-    <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-xs">
-      <div className="flex items-center justify-between mb-4">
+    <div className="rounded-2xl border border-slate-200/80 bg-white p-4 sm:p-5 shadow-xs">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
         <div>
           <h4 className="text-sm font-bold text-slate-800">Monthly Attendance Calendar</h4>
           <p className="text-xs text-slate-500">October 2026</p>
         </div>
-        <div className="flex items-center gap-3 text-[11px] text-slate-500">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] text-slate-500">
           <span className="flex items-center gap-1">
             <span className="h-2 w-2 rounded-full bg-emerald-500" /> Present
           </span>
@@ -32,9 +32,9 @@ const AttendanceCalendar = ({ logs = [] }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-7 gap-2 text-center text-xs">
+      <div className="grid grid-cols-7 gap-1 sm:gap-2 text-center text-xs">
         {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((d) => (
-          <div key={d} className="font-bold text-slate-400 py-1 text-[11px]">
+          <div key={d} className="font-bold text-slate-400 py-1 text-[10px] sm:text-[11px]">
             {d}
           </div>
         ))}
@@ -48,7 +48,7 @@ const AttendanceCalendar = ({ logs = [] }) => {
           return (
             <div
               key={day}
-              className={`flex flex-col items-center justify-center rounded-xl p-2.5 transition border ${
+              className={`flex flex-col items-center justify-center rounded-xl p-1 sm:p-2.5 transition border ${
                 isWeekend
                   ? 'bg-slate-50 border-slate-100 text-slate-400'
                   : isPresent
@@ -58,8 +58,8 @@ const AttendanceCalendar = ({ logs = [] }) => {
                   : 'bg-white border-slate-100 text-slate-600'
               }`}
             >
-              <span className="text-xs">{day}</span>
-              <span className="text-[9px] mt-0.5 opacity-80 uppercase tracking-tighter">
+              <span className="text-[11px] sm:text-xs">{day}</span>
+              <span className="text-[8px] sm:text-[9px] mt-0.5 opacity-80 uppercase tracking-tighter truncate max-w-full">
                 {isWeekend ? 'OFF' : status === 'Upcoming' ? '—' : status}
               </span>
             </div>

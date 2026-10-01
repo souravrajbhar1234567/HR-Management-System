@@ -12,8 +12,8 @@ const LeaveTable = ({
   return (
     <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-xs">
       <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs">
-          <thead className="border-b border-slate-200 bg-slate-50/70 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+        <table className="w-full min-w-[650px] text-left text-xs">
+          <thead className="border-b border-slate-200 bg-slate-50/70 text-[11px] font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap">
             <tr>
               {showEmployee && <th className="px-6 py-3.5">Employee</th>}
               <th className="px-6 py-3.5">Leave Type</th>
@@ -24,7 +24,7 @@ const LeaveTable = ({
               {showAdminActions && <th className="px-6 py-3.5 text-right">Review</th>}
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100 text-slate-700">
+          <tbody className="divide-y divide-slate-100 text-slate-700 whitespace-nowrap">
             {leaves.map((leave) => (
               <tr key={leave._id} className="hover:bg-slate-50/60 transition">
                 {showEmployee && (

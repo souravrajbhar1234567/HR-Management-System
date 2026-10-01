@@ -7,8 +7,8 @@ const EmployeeTable = ({ employees = [], onEdit, onDelete, onView }) => {
   return (
     <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-xs">
       <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs">
-          <thead className="border-b border-slate-200 bg-slate-50/70 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+        <table className="w-full min-w-[700px] text-left text-xs">
+          <thead className="border-b border-slate-200 bg-slate-50/70 text-[11px] font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap">
             <tr>
               <th className="px-6 py-3.5">Employee</th>
               <th className="px-6 py-3.5">ID</th>
@@ -19,7 +19,7 @@ const EmployeeTable = ({ employees = [], onEdit, onDelete, onView }) => {
               <th className="px-6 py-3.5 text-right">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100 text-slate-700">
+          <tbody className="divide-y divide-slate-100 text-slate-700 whitespace-nowrap">
             {employees.map((emp) => (
               <tr key={emp._id} className="hover:bg-slate-50/60 transition">
                 <td className="px-6 py-3.5">
